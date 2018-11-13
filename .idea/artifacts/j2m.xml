@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="j2m">
+    <output-path>$PROJECT_DIR$/release</output-path>
+    <root id="archive" name="j2m.jar">
+      <element id="module-output" name="j2m" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/json.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

@@ -60,7 +60,7 @@ public class CodeGenJava {
                     if (joModel1.getClass().getSimpleName().equals("JSONObject") && !isJsonArray) {
                         dataType = ((joModel1 instanceof JSONArray || joModel1 instanceof JSONObject) ? dataType : joModel1.getClass().getSimpleName());
                     } else {
-                        dataType = "List&#60;" + ((joModel1 instanceof JSONArray || joModel1 instanceof JSONObject) ? removePlural(dataType) : joModel1.getClass().getSimpleName()) + "&#62;";
+                        dataType = "List<" + ((joModel1 instanceof JSONArray || joModel1 instanceof JSONObject) ? removePlural(dataType) : joModel1.getClass().getSimpleName()) + ">";
                         hasList = true;
                     }
                 }

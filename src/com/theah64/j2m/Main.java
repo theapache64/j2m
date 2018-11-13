@@ -7,6 +7,8 @@ import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Scanner;
 
 public class Main {
@@ -19,7 +21,18 @@ public class Main {
         final String modelName = scanner.nextLine();
 
         System.out.print("Paste JSON here : ");
-        final String jsonString = scanner.nextLine();
+        final ArrayList<String> jsonLines = new ArrayList<>();
+
+        String tempLine;
+        while (scanner.hasNextLine()) {
+            tempLine = scanner.nextLine();
+            if (tempLine.trim().isEmpty()) {
+                break;
+            }
+            jsonLines.add(tempLine);
+        }
+
+        final String jsonString = String.join("", jsonLines);
 
         System.out.print("Do you want GSON support ? (y/n) : ");
         final String gsonSupport = scanner.nextLine();
